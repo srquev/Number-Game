@@ -7,11 +7,11 @@ If all the 3-digits are consecutive no matter what their order is, user will get
 User's balance will be updated by adding the winning amount.
 If all the 3-digits are not as per the conditions mentioned above user needs to try again, if user's balance reaches below 100 INR, Game will be Over.
 
-#Technologies Used
+# Technologies Used
 A function which is triggered when user hit the start button.
 3-digits number is genereted by JS Math.random() fun, then digits are converted into a string and again that string is converted into array
 using split('') method.
 All the 3-digits are compared inside a else-if ladder.
 
-#Others
+# Others
 Some CSS are applied to to the html elements:background, color, padding, margin, border, outline,hover,text-alignment etc..
