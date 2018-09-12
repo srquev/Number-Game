@@ -11,13 +11,29 @@
             color: #f2f2f2;
             text-align: center;
         }
+        .outer #btn{
+            margin-top: 10px;
+            padding:7px 25px;
+            border-radius: 15px;
+            border:none;
+            outline: none;
+            background: #cc6666;
+            color:#fff;
+            font-weight:500;
+            
+        }
+        .outer #btn:hover{
+            background: #ff6666;
+            cursor: pointer;
+            transition: ease 0.5s;
+        }
     </style>
 </head>
 <body>
  <div class="outer">
      <h1>Game</h1>
  <h3 id="balance">You have 1000 INR</h3>
- <input type="button" value="start" onclick="randomNo();" id="btn">
+ <input type="button" value="START" onclick="randomNo();" id="btn">
  <p id="digits"></p>
  <p id="output"></p>
  </div>
