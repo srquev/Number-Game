@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Game</title>
+    <style>
+        body{
+            background:#006666;
+        }
+    </style>
+</head>
+<body>
+ <div class="outer">
+     <h1>Game</h1>
+ <h3 id="balance">You have 1000 INR</h3>
+ <input type="button" value="start" onclick="randomNo();" id="btn">
+ <p id="digits"></p>
+ <p id="output"></p>
+ </div>
+   
+  <script>
+        var x = 1000;
+        function randomNo()
+      {
+         x -= 100;   //each time we call function value of x will reduce by 100.
+            if(x < 100)
+            {
+                document.getElementById('btn').value="Game Over !";
+                return;
+            }
+            
+        var rDigits;  
+        rDigits=Math.floor(Math.random()*(999-100+1)+100);      //stored 3digits no.s in rDigits variable
+        document.getElementById('digits').innerHTML=rDigits;    //dynamically wrote the inner html of <p> tag
+        let str=rDigits.toString();                             //converted the digits into string
+        let arr=str.split('');                                  //again converted the string into array of integer
+        
+        if(arr[0]==arr[1] && arr[1]==arr[2] &&  arr[0]==arr[2]) 
+            {
+                x += 1000; //x=x+1000;
+                document.getElementById('output').innerHTML="You won "+"<b> 1000 INR</b>";
+            }
+          
+        else if(arr[0]%2==0 && arr[1]%2==0 && arr[2]%2==0  )
+            {
+                x += 300; 
+                document.getElementById('output').innerHTML="You won "+"<b> 300 INR </b>"+" as the Numbers are Even.";
+            }
+          else if( (arr[0]%2==1 && arr[0]!==0 ) && (arr[1]%2==1 && arr[1]!==0 )&&(arr[2]%2==1 && arr[2]!==0 ) )
+            {
+                x += 300; 
+                document.getElementById('output').innerHTML="You won "+"<b> 300 INR </b>"+" as the Numbers are Odd.";
+            }
+       
+        else if(Math.max(...arr) - Math.min(...arr) == 2)   //get the max & min value from array using spread operator.
+            {                     // 3 consecutive no.s, no matter what their order is will always follow this maxNo.- minNo=2.
+                x += 800; 
+                document.getElementById('output').innerHTML="You won "+"<b> 800 INR </b>"+" as the Numbers are in sequence.";
+            }
+          
+        else{
+                document.getElementById('output').innerHTML="Sorry you were not " +"<b>Lucky</b>"+" this Time.";
+            }
+        
+        
+         document.getElementById('balance').innerHTML="You have "+x+" INR";
+        
+        }
+    </script>  
+</body>
+</html>
